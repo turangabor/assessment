@@ -94,12 +94,9 @@ function DigitConverter(props) {
           label="Digit"
           type="number"
           name={digit}
+          placeholder="Please enter digits"
           onChange={e => setDigit(e.target.value)}
-          InputProps={{
-            inputProps: {
-              min: 0
-            }
-          }}
+          inputProps={{ "data-testid": "digit_form_input" }}
           InputLabelProps={{
             shrink: true
           }}
@@ -108,13 +105,17 @@ function DigitConverter(props) {
           variant="contained"
           color="secondary"
           type="submit"
+          data-testid="digit_form_submit"
           disabled={checkDisabled()}
         >
           Convert
         </Button>
       </form>
       {convertResult && (
-        <div className="digit_converter_result">
+        <div
+          className="digit_converter_result"
+          data-testid="digit_convert_result"
+        >
           <h3>Result</h3>
           {convertResult}
         </div>

@@ -46,7 +46,15 @@ function Digit_converter(props) {
     evt.preventDefault();
     setConvertResult(inWords(digit));
   };
-  function inWords(num) {
+
+  const checkDisabled = () => {
+    if (digit === "" || digit < 1 || digit > maxlength) {
+      return true;
+    }
+    return false;
+  };
+
+  const inWords = num => {
     if ((num = num.toString()).length > 9) return "overflow";
     let n = ("000000000" + num)
       .substr(-9)
@@ -75,7 +83,7 @@ function Digit_converter(props) {
           (a[Number(n[5])] || b[n[5][0]] + "-" + a[n[5][1]])
         : "";
     return str;
-  }
+  };
 
   return (
     <div className="digit_converter">
@@ -100,9 +108,7 @@ function Digit_converter(props) {
           variant="contained"
           color="secondary"
           type="submit"
-          disabled={
-            digit === "" || digit < 1 || digit > maxlength ? true : false
-          }
+          disabled={checkDisabled()}
         >
           Convert
         </Button>

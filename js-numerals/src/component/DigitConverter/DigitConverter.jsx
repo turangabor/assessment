@@ -93,7 +93,6 @@ function DigitConverter(props) {
           id="digit_input"
           label="Digit"
           type="number"
-          name={digit}
           placeholder="Please enter digits"
           onChange={e => setDigit(e.target.value)}
           inputProps={{ "data-testid": "digit_form_input" }}

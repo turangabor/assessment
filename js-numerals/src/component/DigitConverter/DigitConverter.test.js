@@ -15,6 +15,7 @@ describe("convert button", () => {
       const inWords = jest.fn();
       const { queryByTestId } = render(<DigitConverter />);
       fireEvent.click(queryByTestId("digit_form_submit"));
+
       expect(inWords).not.toHaveBeenCalled();
     });
   });
@@ -27,6 +28,7 @@ describe("convert button", () => {
       const digitInput = queryByTestId("digit_form_input");
       const submitButton = queryByTestId("digit_form_submit");
       fireEvent.change(digitInput, { target: { value: 1 } });
+
       expect(submitButton).toBeEnabled();
     });
   });
@@ -101,7 +103,6 @@ describe("convert button", () => {
       fireEvent.change(digitInput, { target: { value: 20000 } });
       fireEvent.click(submitButton);
 
-      //expect(getByText("seven"));
       expect(() => {
         getByText("seven").toThrowError();
       });

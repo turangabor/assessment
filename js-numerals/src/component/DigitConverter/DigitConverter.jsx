@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import "./Digit_converter.css";
+import "./DigitConverter.css";
 
-function Digit_converter(props) {
+function DigitConverter(props) {
   const [convertResult, setConvertResult] = useState("");
   const [digit, setDigit] = useState("");
 
@@ -123,4 +123,4 @@ function Digit_converter(props) {
   );
 }
 
-export default Digit_converter;
+export default DigitConverter;

@@ -1,11 +1,11 @@
 import React from "react";
-import Digit_converter from "./component/Digit_converter/Digit_converter";
+import DigitConverter from "./component/DigitConverter/DigitConverter";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Digit_converter />
+      <DigitConverter />
     </div>
   );
 }
